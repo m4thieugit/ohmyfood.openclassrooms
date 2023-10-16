@@ -1,0 +1,207 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+:root
+    --color-grey: #353535
+    --color-grey-lite: #7E7E7E
+    --color-fonctionnements: #F6F6F6
+    --color-black: #000000
+    --color-white: #ffffff
+    --color-white-secondary: #F6F6F6
+    --color-purple: #9356DC
+
+body
+    margin: 0
+    font-family: 'Roboto', sans-serif
+
+*
+    box-sizing: border-box
+
+.el-bold
+    font-weight: 600
+// Navbar
+.navbar
+    background-color: #ffffff
+    padding: 15px
+    text-align: center
+    padding: 30px
+    box-shadow: 0px 2px 4px 0px #00000026
+    margin: auto
+    // Logo de la navbar
+    .navbar__logo
+        width: 100%
+// Le contenu du header
+#header__container
+    // La localisation des restaurants
+    #header__location
+        background-color: #EAEAEA
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 20px
+
+    // Le contenu principale du header
+    #header__content
+        padding: 50px
+        text-align: center
+        background: #F6F6F6
+
+        // Nom du header
+        #header__title
+
+        // Description du header
+        #header__description
+
+        // Boutons  du header
+        #header__buttons .btn
+            background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
+            box-shadow: 0px 4px 10px 0px #00000040
+            border-radius: 50px
+            margin-top: 15px
+            border: unset
+            padding: 15px
+            color: var(--color-white)
+            font-size: 16px
+            font-weight: 500
+            cursor: pointer
+
+        #header__buttons .btn:hover
+            background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15))
+            box-shadow: 0px 4px 15px 0px #00000059
+            background-color: #FFFFFF26
+
+// Le contenu principale de la page
+#main__container
+    // Le conteneur de la section fonctionnements
+    #main__fonctionnements__container
+        padding: 30px
+
+        // Le conteneur des div fonctionnements
+        #main__fonctionnements
+            display: flex
+            flex-direction: column
+            gap: 20px
+
+            // Div fonctionnement
+            .main__fonctionnement
+                display: flex
+                align-items: center
+                position: relative
+                background-color: var(--color-fonctionnements)
+                border-radius: 20px
+                gap: 20px
+                padding: 15px
+                width: 100%
+                font-weight: 600
+                box-shadow: 0px 4px 15px 0px #00000026
+
+                // L'icone de la div fonctionnement
+                .main__fonctionnement__icon
+                    color: var(--color-grey-lite)
+                
+                // Animations et colorations en violet
+                .main__fonctionnement__icon--purple, .main__fonctionnement__number--purple
+                    color: var(--color-purple)
+                
+                // Numéro de fonctionnement
+                .main__fonctionnement__number
+                    display: flex
+                    padding: 1px
+                    border-radius: 50px
+                    background-color: var(--color-purple)
+                    color: var(--color-white)
+                    width: 25px
+                    height: 25px
+                    align-items: center
+                    justify-content: center
+                    margin-left: -27px
+                    font-weight: 100
+
+    // Conteneur de restaurants (ou section)
+    #main__restaurants__container
+        background: #F6F6F6
+        padding: 30px
+
+        // La div qui contient les restaurants
+        #main__restaurants
+            display: flex
+            flex-direction: column
+            gap: 30px
+
+            // La div de restaurant
+            .main__restaurant
+                width: 100%
+                background-color: var(--color-white)
+                border-radius: 15px
+                box-shadow: 0px 4px 15px 0px #0000001A
+                position: relative
+
+                // Le mini bandeau "nouveau"
+                .main__restaurant__new
+                    margin: 10px
+                    position: absolute
+                    right: 0
+                    background: #99E2D0
+                    color: #008766
+                    padding: 0 15px 0 15px
+                    box-shadow: 0px 2px 4px 0px #00000026
+    
+                // Le thumbnail du restaurant
+                .main__restaurant_img img
+                    min-width: 100%
+                    height: 200px
+                    border-radius: 15px 15px 0px 0px
+
+                // Le contenu du restaurant
+                .main__restaurant__content
+                    display: flex
+                    justify-content: space-between
+                    margin: auto 30px auto 30px
+
+                // Le bouton favori du restaurant
+                .main__restaurant__button
+                    align-items: center
+                    display: flex
+                    font-size: 30px
+
+                    i
+                        -webkit-text-stroke-color: var(--color-black)
+                        -webkit-text-stroke-width: 1px
+                        color: var(--color-white)
+                        cursor: pointer
+                    i:hover
+                        -webkit-text-stroke-color: var(--color-purple)
+                        -webkit-text-stroke-width: 1px
+                        color: var(--color-purple)
+                
+                .main__restaurant--favorite
+                    -webkit-text-stroke-color: var(--color-purple)
+                    -webkit-text-stroke-width: 1px
+                    color: var(--color-purple)
+
+// Pied de page
+#footer__container
+    padding: 30px
+    background-color: var(--color-grey)
+    // Modification des couleurs du logo en blanc
+    #footer__logo svg *
+        fill: var(--color-white)
+        width: 137.58px
+
+    // Colonnes du footer
+    #footer__colomns
+        // Colonne
+        .footer__colomn
+            display: flex
+            flex-direction: column
+            color: var(--color-white)
+            gap: 15px
+            margin-top: 15px
+            margin-bottom: 15px
+
+            a
+                display: flex
+                color: var(--color-white)
+                text-decoration: none
+            i
+                width: 35px
+    
