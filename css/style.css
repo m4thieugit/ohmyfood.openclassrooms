@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 :root {
   --color-grey: #353535;
   --color-grey-lite: #7E7E7E;
@@ -29,24 +30,45 @@ body {
   padding: 30px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
   margin: auto;
+  position: relative;
 }
 .navbar .navbar__logo {
-  width: 100%;
+  width: 162px;
+}
+.navbar .navbar a {
+  text-decoration: none;
+}
+.navbar #btn-return {
+  position: absolute;
+  left: 25px;
+  margin: auto;
+  font-size: 25px;
+  color: var(--color-black);
 }
 
-#header__container #header__location {
+#header__location {
   background-color: #EAEAEA;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
-#header__container #header__content {
+
+#header__picture {
+  position: relative;
+  z-index: 1;
+}
+
+#header__picture .img {
+  max-width: 100%;
+}
+
+#header__content {
   padding: 50px;
   text-align: center;
   background: #F6F6F6;
 }
-#header__container #header__content #header__buttons .btn {
+#header__content #header__buttons .btn {
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 50px;
@@ -57,22 +79,23 @@ body {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+  transition: ease-out 0.3s all;
 }
-#header__container #header__content #header__buttons .btn:hover {
+#header__content #header__buttons .btn:hover {
   background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
   background-color: rgba(255, 255, 255, 0.1490196078);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
 }
 
-#main__container #main__fonctionnements__container {
+main #main__fonctionnements__container {
   padding: 30px;
 }
-#main__container #main__fonctionnements__container #main__fonctionnements {
+main #main__fonctionnements__container #main__fonctionnements {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#main__container #main__fonctionnements__container #main__fonctionnements .main__fonctionnement {
+main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement {
   display: flex;
   align-items: center;
   position: relative;
@@ -84,13 +107,13 @@ body {
   font-weight: 600;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
 }
-#main__container #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__icon {
+main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__icon {
   color: var(--color-grey-lite);
 }
-#main__container #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__icon--purple, #main__container #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__number--purple {
+main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__icon--purple, main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__number--purple {
   color: var(--color-purple);
 }
-#main__container #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__number {
+main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__number {
   display: flex;
   padding: 1px;
   border-radius: 50px;
@@ -103,61 +126,114 @@ body {
   margin-left: -27px;
   font-weight: 100;
 }
-#main__container #main__restaurants__container {
+main #main__restaurants__container {
   background: #F6F6F6;
   padding: 30px;
 }
-#main__container #main__restaurants__container #main__restaurants {
+main #main__restaurants__container #main__restaurants {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant {
+main #main__restaurants__container #main__restaurants .main__restaurant {
   width: 100%;
   background-color: var(--color-white);
   border-radius: 15px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   position: relative;
+  text-decoration: none;
+  color: var(--color-black);
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__new {
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__new {
   margin: 10px;
   position: absolute;
   right: 0;
   background: #99E2D0;
   color: #008766;
-  padding: 0 15px 0 15px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 2px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant_img img {
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant_img {
   min-width: 100%;
+  max-width: 100%;
   height: 200px;
   border-radius: 15px 15px 0px 0px;
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__content {
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__content {
   display: flex;
   justify-content: space-between;
   margin: auto 30px auto 30px;
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button {
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button {
   align-items: center;
   display: flex;
   font-size: 30px;
-}
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button i {
   -webkit-text-stroke-color: var(--color-black);
   -webkit-text-stroke-width: 1px;
   color: var(--color-white);
   cursor: pointer;
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button i:hover {
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button:hover {
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
-  -webkit-text-stroke-width: 1px;
-  color: var(--color-purple);
+  color: transparent;
 }
-#main__container #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant--favorite {
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button:active {
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
+  color: transparent;
+}
+main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant--favorite {
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: var(--color-purple);
+  color: transparent;
+}
+main #main__plats__container {
+  background: #F6F6F6;
+  padding: 30px;
+  margin-top: -30px;
+  border-radius: 25px 25px 0px 0px;
+  position: relative;
+  z-index: 2;
+}
+main #main__plats__container #main__plats__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #main__plats__container .main__plats__title {
+  font-family: "Shrikhand", serif;
+}
+main #main__plats__container .main__plats__h3 {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+main #main__plats__container .main__plats__h3__border {
+  width: 40px;
+  height: 3px;
+  background: #99E2D0;
+}
+main #main__plats__container .main__plats__button {
+  font-size: 30px;
+  -webkit-text-stroke-color: var(--color-black);
   -webkit-text-stroke-width: 1px;
-  color: var(--color-purple);
+  color: transparent;
+  cursor: pointer;
+}
+main #main__plats__container .main__plats__button:hover {
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  -webkit-text-stroke-color: var(--color-purple);
+  color: transparent;
 }
 
 #footer__container {
@@ -183,4 +259,60 @@ body {
 }
 #footer__container #footer__colomns .footer__colomn i {
   width: 35px;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar .navbar__logo {
+    width: 200px;
+    height: 34.2px;
+  }
+  #main__restaurants__container {
+    background: #F6F6F6;
+    padding: 30px;
+  }
+  main .main__fonctionnement__title, main .main__restaurants__title {
+    margin-bottom: 15px;
+  }
+  main #main__fonctionnements, main .main__fonctionnement__title, main #main__restaurants, main .main__restaurants__title {
+    max-width: 1200px;
+    margin: 30px auto 30px auto;
+  }
+  main #main__fonctionnements__container #main__fonctionnements {
+    flex-direction: row;
+    gap: 25px;
+  }
+  main #main__restaurants__container #main__restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  main .main__restaurant {
+    width: auto;
+    flex: 0 1 48%;
+    margin: auto;
+  }
+  #footer__container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: auto;
+    padding-bottom: 10px;
+    padding-top: 50px;
+  }
+  #footer__logo svg {
+    width: 137.58px;
+    height: 27px;
+  }
+  #footer_columns {
+    min-width: 661px;
+  }
+  .footer__colomn {
+    margin-right: 20px;
+  }
+  #footer__colomns, #footer__container #footer__colomns .footer__colomn {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-right: 50px;
+  }
 }/*# sourceMappingURL=style.css.map */
