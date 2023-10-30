@@ -8,6 +8,7 @@
   --color-white: #ffffff;
   --color-white-secondary: #F6F6F6;
   --color-purple: #9356DC;
+  --color-green: #99E2D0;
 }
 
 body {
@@ -69,7 +70,7 @@ body {
   background: #F6F6F6;
 }
 #header__content #header__buttons .btn {
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   border-radius: 50px;
   margin-top: 15px;
@@ -79,11 +80,10 @@ body {
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: ease-out 0.3s all;
+  transition: all 0.4s ease-in-out;
 }
 #header__content #header__buttons .btn:hover {
-  background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  background-color: rgba(255, 255, 255, 0.1490196078);
+  opacity: 0.85;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3490196078);
 }
 
@@ -173,6 +173,7 @@ main #main__restaurants__container #main__restaurants .main__restaurant .main__r
   -webkit-text-stroke-width: 1px;
   color: var(--color-white);
   cursor: pointer;
+  pointer-events: none;
 }
 main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button:hover {
   background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
@@ -221,6 +222,7 @@ main #main__plats__container .main__plats__h3__border {
   width: 40px;
   height: 3px;
   background: #99E2D0;
+  margin-bottom: 12px;
 }
 main #main__plats__container .main__plats__button {
   font-size: 30px;
@@ -234,6 +236,76 @@ main #main__plats__container .main__plats__button:hover {
   -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
   color: transparent;
+}
+main #main__plats__container .main__plats {
+  gap: 12px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+main #main__plats__container .main__plat {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 15.043px;
+  background-color: var(--color-white);
+  box-shadow: 0px 4.01149px 15.0431px 0px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+}
+main #main__plats__container .main__plat .main__plat__colomns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+main #main__plats__container .main__plat .main__plat__colomn {
+  padding: 15px;
+}
+main #main__plats__container .main__plat .main__plat__colomn * {
+  margin: auto;
+}
+main #main__plats__container .main__plat h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+main #main__plats__container .main__plat__colomn.price {
+  align-self: flex-end;
+  font-weight: 700;
+}
+main #main__plats__container .selector {
+  transition: all 0.4s ease-in-out;
+  border-radius: 0px 15px 15px 0px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  padding: 15px;
+  margin-right: -200px;
+}
+main #main__plats__container .selector i {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  width: 50px;
+}
+main #main__plats__container .main__plat:hover .selector, main #main__plats__container .main__plat:focus .selector, main #main__plats__container .main__plat:active .selector {
+  margin-right: 0px;
+}
+main #main__plats__container .main__plats__confirm__button {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  border-radius: 25px;
+  background: linear-gradient(0deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 100%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  width: 186px;
+  height: 50px;
+  display: block;
+  margin: auto;
+  border: unset;
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: 16px;
+}
+main #main__plats__container .main__plats__confirm__button:hover {
+  opacity: 0.85;
 }
 
 #footer__container {
@@ -289,6 +361,18 @@ main #main__plats__container .main__plats__button:hover {
     width: auto;
     flex: 0 1 48%;
     margin: auto;
+  }
+  main #main__plats__container {
+    max-width: 1055px;
+    margin: -50px auto auto auto;
+  }
+  main #main__plats__content {
+    max-width: 700px;
+    margin: auto;
+  }
+  main #main__plats__container #main__plats__header {
+    justify-content: center;
+    gap: 30px;
   }
   #footer__container {
     display: flex;
