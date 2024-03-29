@@ -69,12 +69,6 @@ body
     text-align: center
     background: #F6F6F6
 
-    // Nom du header
-    #header__title
-
-    // Description du header
-    #header__description
-        
     // Boutons  du header
     #header__buttons .btn
         background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%)
@@ -117,6 +111,7 @@ main
                 width: 100%
                 font-weight: 600
                 box-shadow: 0px 4px 15px 0px #00000026
+                transition: all .3s ease-in-out
 
                 // L'icone de la div fonctionnement
                 .main__fonctionnement__icon
@@ -140,13 +135,16 @@ main
                     margin-left: -27px
                     font-weight: 100
 
+            .main__fonctionnement:hover
+                transform: scale(1.02)
+
+                .main__fonctionnement__icon
+                    color: var(--color-purple)
+                    
     // Conteneur de restaurants (ou section)
     #main__restaurants__container
         background: #F6F6F6
         padding: 30px
-
-        // Titre de la section restaurant
-        .main__restaurants__title
 
         // La div qui contient les restaurants
         #main__restaurants
@@ -206,26 +204,20 @@ main
                     bottom: 35px
                     right: 35px
                     z-index: 5
-
-                .main__restaurant__button--favorite
-                    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
+                    transition: background 2s ease
+                    background-size: 100% 0%
+                    background-repeat: no-repeat
+                    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) 0% 0%/100% 0% no-repeat
                     -webkit-background-clip: text
-                    -webkit-text-stroke-color: var(--color-purple)
-                    color: transparent
 
                 .main__restaurant__button:hover
-                    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
-                    -webkit-background-clip: text
                     -webkit-text-stroke-color: var(--color-purple)
-                    color: transparent
+                    background-size: 100% 100%
+
 
                 .main__restaurant__button:active
-                    background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
-                    -webkit-background-clip: text
                     -webkit-text-stroke-color: var(--color-purple)
-                    color: transparent
-
-
+                    background-size: 100% 100%
 
     // Conteneur de restaurants (ou section)
     #main__plats__container
@@ -263,20 +255,20 @@ main
             font-size: 30px
             -webkit-text-stroke-color: var(--color-black)
             -webkit-text-stroke-width: 1px
-            color: transparent
             cursor: pointer
+            transition: background 2s ease
+            background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) 0% 0%/100% 0% no-repeat
+            -webkit-background-clip: text
+            color: transparent
+
 
         .main__plats__button:hover
-            background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
-            -webkit-background-clip: text
             -webkit-text-stroke-color: var(--color-purple)
-            color: transparent
+            background-size: 100% 100%
 
         .main__plats__button--favorite
-            background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%)
-            -webkit-background-clip: text
             -webkit-text-stroke-color: var(--color-purple)
-            color: transparent
+            background-size: 100% 100%
 
         .main__plats
             gap: 12px
@@ -306,6 +298,12 @@ main
         .main__plat h4
             font-size: 18px
             margin-bottom: 10px
+
+        .main__plat h4, .main__plat p
+            overflow: hidden
+            display: -webkit-box
+            -webkit-line-clamp: 1
+            -webkit-box-orient: vertical
 
         .main__plat__colomn.price
             align-self: flex-end
@@ -361,13 +359,15 @@ main
     .main__page-loader_container
         margin: auto
         max-width: 90%
-
+        display: flex
+        height: 100%
+        align-items: center
+        justify-content: center
         
         .loader-icon
-            font-size: 30px
+            font-size: 52px
+            color: var(--color-green)
             position: absolute
-            top: 50%
-            left: 50%
             animation: rotate-loader-icon 1s linear infinite
 
 @keyframes hide-loader-container

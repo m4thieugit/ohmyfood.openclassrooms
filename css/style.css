@@ -110,6 +110,7 @@ main #main__fonctionnements__container #main__fonctionnements .main__fonctionnem
   width: 100%;
   font-weight: 600;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  transition: all 0.3s ease-in-out;
 }
 main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement .main__fonctionnement__icon {
   color: var(--color-grey-lite);
@@ -129,6 +130,12 @@ main #main__fonctionnements__container #main__fonctionnements .main__fonctionnem
   justify-content: center;
   margin-left: -27px;
   font-weight: 100;
+}
+main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement:hover {
+  transform: scale(1.02);
+}
+main #main__fonctionnements__container #main__fonctionnements .main__fonctionnement:hover .main__fonctionnement__icon {
+  color: var(--color-purple);
 }
 main #main__restaurants__container {
   background: #F6F6F6;
@@ -187,24 +194,19 @@ main #main__restaurants__container #main__restaurants .main__restaurant .main__r
   bottom: 35px;
   right: 35px;
   z-index: 5;
-}
-main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button--favorite {
-  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  transition: background 2s ease;
+  background-size: 100% 0%;
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) 0% 0%/100% 0% no-repeat;
   -webkit-background-clip: text;
-  -webkit-text-stroke-color: var(--color-purple);
-  color: transparent;
 }
 main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button:hover {
-  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
-  color: transparent;
+  background-size: 100% 100%;
 }
 main #main__restaurants__container #main__restaurants .main__restaurant .main__restaurant__button:active {
-  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
-  color: transparent;
+  background-size: 100% 100%;
 }
 main #main__plats__container {
   background: #F6F6F6;
@@ -241,20 +243,19 @@ main #main__plats__container .main__plats__button {
   font-size: 30px;
   -webkit-text-stroke-color: var(--color-black);
   -webkit-text-stroke-width: 1px;
-  color: transparent;
   cursor: pointer;
+  transition: background 2s ease;
+  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%) 0% 0%/100% 0% no-repeat;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 main #main__plats__container .main__plats__button:hover {
-  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
-  color: transparent;
+  background-size: 100% 100%;
 }
 main #main__plats__container .main__plats__button--favorite {
-  background: -webkit-linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
-  -webkit-background-clip: text;
   -webkit-text-stroke-color: var(--color-purple);
-  color: transparent;
+  background-size: 100% 100%;
 }
 main #main__plats__container .main__plats {
   gap: 12px;
@@ -284,6 +285,12 @@ main #main__plats__container .main__plat .main__plat__colomn * {
 main #main__plats__container .main__plat h4 {
   font-size: 18px;
   margin-bottom: 10px;
+}
+main #main__plats__container .main__plat h4, main #main__plats__container .main__plat p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 main #main__plats__container .main__plat__colomn.price {
   align-self: flex-end;
@@ -338,12 +345,15 @@ main #main__plats__container .main__plats__confirm__button:hover {
 #main__page-loader .main__page-loader_container {
   margin: auto;
   max-width: 90%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 #main__page-loader .main__page-loader_container .loader-icon {
-  font-size: 30px;
+  font-size: 52px;
+  color: var(--color-green);
   position: absolute;
-  top: 50%;
-  left: 50%;
   animation: rotate-loader-icon 1s linear infinite;
 }
 
